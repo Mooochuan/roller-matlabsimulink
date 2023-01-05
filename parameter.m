@@ -1,0 +1,11 @@
+m1=290; m2=310; m3=6;
+k1=1200; k2=5800;
+c1=2.3; c2=2.0;
+M=[m1,0;0,m2+m3];
+C=[c1,-c1;-c1,c1+c2];
+K=[k1,-k1;-k1,k1+k2];
+A=cat(1,cat(2, zeros(2,2),eye(2)), cat(2,-inv(M)*K,-inv(M)*C));
+G=eye(2);
+B=cat(1,zeros(2,2),-inv(M)*G);
+C0=cat(2,eye(2),zeros(2,2));
+D=zeros(2,2);
